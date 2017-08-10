@@ -17,10 +17,10 @@ app.get('/article-one',function(req,res){
 });
 
 app.get('/article-two',function(req,res){
-    res.send("article one is created under imad.hasura.io");
+    res.send("article two is created under imad.hasura.io");
 });
 app.get('/article-threee',function(req,res){
-    res.send("article one is created under imad.hasura.io");
+    res.send("article three is created under imad.hasura.io");
 });
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
