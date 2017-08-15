@@ -15,15 +15,11 @@ var column = {
 }
 
 function innerHTMLtemplate(data){
-    var title=data.title;
-    var heading=data.heading;
-    var date=data.date;
-    var paragraph=data.paragraph;
     var createHTML =
     `<!Doctype html>
 <html>
     <head>
-    <title> $(data.title) </title>
+    <title> ${data.title} </title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="/ui/style.css" rel="stylesheet" />
     </head>
@@ -34,13 +30,13 @@ function innerHTMLtemplate(data){
         </div>
         <hr/>
         <div>
-            <h2> $(data.heading)</h2>
+            <h2> ${data.heading}</h2>
         </div>
         <div>
-            $(data.date)
+            ${data.date}
         </div>
         <div>
-            $(data.paragraph)
+            ${data.paragraph}
         </div>
     </div>
  </body>
