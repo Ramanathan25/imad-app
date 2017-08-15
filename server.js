@@ -5,9 +5,46 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var column = {
+    title:"Article One",
+    date:"Aug 15,2017",
+    heading:"Article-One",
+    paragraph: `<p> This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.</p>
+            <p> This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.</p>
+            <p> This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.</p>`
+}
 
+function innerHTMLtemplate(data){
+    var createHTML =
+    `<!Doctype html>
+<html>
+    <head>
+    <title> $(data.title) </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+ <body>
+    <div class="container">
+        <div>
+            <a href='/'>Home</a>
+        </div>
+        <hr/>
+        <div>
+            <h2> $(data.heading)</h2>
+        </div>
+        <div>
+            $(data.date)
+        </div>
+        <div>
+            $(data.paragraph)
+        </div>
+    </div>
+ </body>
+</html>`;
+return innerHTMLTemplate;
+}
 app.get('/ui/article-one',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+    res.send(innerHTMLtemplate(column));
 });
 
 
