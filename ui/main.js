@@ -3,7 +3,7 @@ var count = document.getElementById('count');
 var counter=0;
 counter1.onclick=function(){
     var request= new XMLHttpRequest();
-    if(this.onreadystatechange==XMLHttpRequest.Done){
+    if(this.onreadystatechange==XMLHttpRequest.DONE){
         if(this.status==200){
             count.innerHTML=this.responsetext;
         }
