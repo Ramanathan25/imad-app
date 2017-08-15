@@ -59,7 +59,7 @@ return createHTML;
 }
 app.get('/ui/:articlename',function(req,res){
     var articlename=req.params.articlename;
-    res.send(innerHTMLtemplate(column(articlename)));
+    res.send(innerHTMLtemplate(column[articlename]));
 });
 
 
