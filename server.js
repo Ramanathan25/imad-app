@@ -60,6 +60,11 @@ function innerHTMLtemplate(data){
 return createHTML;
 }
 
+app.get('/ui/style.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
+});
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -67,11 +72,6 @@ app.get('/', function (req, res) {
 app.get('/ui/:articlename',function(req,res){
     var articlename=req.params.articlename;
     res.send(innerHTMLtemplate(column[articlename]));
-});
-
-
-app.get('/ui/style.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
 
