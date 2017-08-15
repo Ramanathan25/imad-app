@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-app.get('/article-one',function(req,res){
+app.get('ui/article-one',function(req,res){
     res.send("article one is created under imad.hasura.io");
 });
 
