@@ -7,7 +7,7 @@ counter1.onclick=function(){
     if(request.onreadystatechange==XMLHttpRequest.DONE){
         console.log(request.onreadystatechange);
         if(request.status==200){
-            count.innerHTML=request.responseText;
+            count.innerHTML=request.responseText.toString();
         }
     }
     request.open('GET','https://rsdramanathan.imad.hasura-app.io/counter',true);
