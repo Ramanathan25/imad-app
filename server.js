@@ -5,9 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
+
 
 var column={
      "article-one": {
@@ -61,6 +59,11 @@ function innerHTMLtemplate(data){
 </html>`;
 return createHTML;
 }
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
 app.get('/ui/:articlename',function(req,res){
     var articlename=req.params.articlename;
     res.send(innerHTMLtemplate(column[articlename]));
