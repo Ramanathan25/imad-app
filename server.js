@@ -5,6 +5,34 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var article={
+    "article-one":{`
+<!Doctype html>
+<html>
+    <head>
+    <title> Article One</title>
+    </head>
+    <body>
+        <div>
+            <a href='/'>Home</a>
+        </div>
+        <div>
+            <h2> Article-One</h2>
+        </div>
+        <div>
+            Aug 14, 2017
+        </div>
+        <div>
+            <p> This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.</p>
+        </div>
+    </body>
+</html>`
+ }
+    "article-two":{};
+    "article-three":{};
+}
+};
+
 app.get('/ui/article-one',function(req,res){
     res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
 });
