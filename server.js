@@ -18,13 +18,13 @@ var column={
     title:"Article two",
     date:"Aug 15,2017",
     heading:"Article-two",
-    paragraph: "<p> This paragraph ia my article two creation in HTML format.</p>"
+    paragraph: "<p> This paragraph is my article two creation in HTML format.</p>"
 },
    "article-three": {
     title:"Article three",
     date:"Aug 15,2017",
     heading:"Article-three",
-    paragraph: "<p> This paragraph ia my first article one creation in HTML format.</p>"
+    paragraph: "<p> This paragraph is my first article one creation in HTML format.</p>"
 
    }
 };
