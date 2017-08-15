@@ -5,15 +5,17 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+app.get('/article-one',function(req,res){
+    res.send("article one is created under imad.hasura.io");
+});
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
-});
-app.get('/article-one',function(req,res){
-    res.send("article one is created under imad.hasura.io");
 });
 
 app.get('/article-two',function(req,res){
