@@ -18,11 +18,11 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
-app.get('/article-two',function(req,res){
-    res.send("article two is created under imad.hasura.io");
+app.get('/ui/article-two',function(req,res){
+    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
 });
-app.get('/article-threee',function(req,res){
-    res.send("article three is created under imad.hasura.io");
+app.get('/article-three',function(req,res){
+    res.sendFile(path.join(__dirname, 'ui', 'article-thre.html'));
 });
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
