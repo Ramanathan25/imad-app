@@ -5,8 +5,8 @@ counter1.onclick=function(){
     var request= new XMLHttpRequest();
     console.log(request);
     request.onreadystatechange=function(){
-    if(request.readystate==XMLHttpRequest.DONE){
-        console.log(request.onreadystatechange);
+    if(request.readyState==XMLHttpRequest.DONE){
+        console.log(request.readyState);
         if(request.status==200){
             count.innerHTML=request.responseText;
         }
