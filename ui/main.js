@@ -8,5 +8,5 @@ counter1.onclick=function(){
             count.innerHTML=this.responsetext;
         }
     }
-    request.open('GET','/counter',true);
+    request.open('GET','https://rsdramanathan.imad.hasura-app.io',true);
 }
