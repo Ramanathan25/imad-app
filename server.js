@@ -41,7 +41,7 @@ function innerHTMLtemplate(data){
     </div>
  </body>
 </html>`;
-return innerHTMLTemplate;
+return createHTML;
 }
 app.get('/ui/article-one',function(req,res){
     res.send(innerHTMLtemplate(column));
