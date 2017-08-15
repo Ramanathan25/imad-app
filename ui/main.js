@@ -10,5 +10,5 @@ counter1.onclick=function(){
             count.innerHTML=request.responseText;
         }
     }
-    request.open('GET','https://rsdramanathan.imad.hasura-app.io',true);
+    request.open('GET','https://rsdramanathan.imad.hasura-app.io/counter',true);
 }
