@@ -15,7 +15,10 @@ var column = {
 }
 
 function innerHTMLtemplate(data){
-    console.log(data);
+    var title=data.title;
+    var heading=data.heading;
+    var date=data.date;
+    var paragraph=data.paragraph;
     var createHTML =
     `<!Doctype html>
 <html>
