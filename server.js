@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 app.get('/ui/article-one',function(req,res){
-    res.send("article one is created under imad.hasura.io");
+    res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
 });
 
 
