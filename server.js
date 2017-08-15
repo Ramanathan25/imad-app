@@ -5,15 +5,29 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var column = {
+var column={
+     "article-one": {
     title:"Article One",
     date:"Aug 15,2017",
     heading:"Article-One",
     paragraph: `<p> This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.</p>
             <p> This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.</p>
             <p> This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.This paragraph ia my first article one creation in HTML format.</p>`
-}
+},
+   "article-two": {
+    title:"Article two",
+    date:"Aug 15,2017",
+    heading:"Article-two",
+    paragraph: "<p> This paragraph ia my article two creation in HTML format.</p>"
+},
+   "article-three": {
+    title:"Article three",
+    date:"Aug 15,2017",
+    heading:"Article-three",
+    paragraph: "<p> This paragraph ia my first article one creation in HTML format.</p>"
 
+   }
+};
 function innerHTMLtemplate(data){
     var createHTML =
     `<!Doctype html>
@@ -43,8 +57,9 @@ function innerHTMLtemplate(data){
 </html>`;
 return createHTML;
 }
-app.get('/ui/article-one',function(req,res){
-    res.send(innerHTMLtemplate(column));
+app.get('/:articename',function(req,res){
+    var articlename=reg.params.articlename;
+    res.send(innerHTMLtemplate(column(articlename)));
 });
 
 
@@ -56,12 +71,7 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
-app.get('/ui/article-two',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-app.get('/ui/article-three',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
+
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
