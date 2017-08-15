@@ -57,7 +57,7 @@ function innerHTMLtemplate(data){
 </html>`;
 return createHTML;
 }
-app.get('/:articename',function(req,res){
+app.get('/:articlename',function(req,res){
     var articlename=reg.params.articlename;
     res.send(innerHTMLtemplate(column(articlename)));
 });
