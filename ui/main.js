@@ -17,11 +17,11 @@ counter1.onclick=function(){
 };
 
 var name1 = document.getElementById('name');
-var names=name1.value;
+var names1=name1.value;
 var list='';
 var submit= document.getElementById('submit-name');
 submit.onclick=function(){
-    var names1=['ram','bala','balaji'];
+    names1=['ram','bala','balaji'];
     for(var i=0;i<names1.length;i++){
         list='<li>'+names1[i]+'</li>';
     }
