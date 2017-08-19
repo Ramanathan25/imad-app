@@ -23,7 +23,7 @@ var submit= document.getElementById('submit-name');
 submit.onclick=function(){
     names1=['ram','bala','balaji'];
     for(var i=0;i<names1.length;i++){
-        list='<li>'+names1[i]+'</li>';
+        list +='<li>'+names1[i]+'</li>';
     }
     var ul=document.getElementById('nameslist');
     ul.innerHTML=list;
