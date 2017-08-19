@@ -59,6 +59,13 @@ function innerHTMLtemplate(data){
 </html>`;
 return createHTML;
 }
+var name1=[];
+app.get('/submit-name/:name',function(req,res){
+    name1=req.params.name;
+    
+    req.push(name1);
+    res.send(JSON.Stringify(name1));
+})
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
