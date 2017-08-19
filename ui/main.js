@@ -16,15 +16,34 @@ counter1.onclick=function(){
     request.send()
 };
 
-var name1 = document.getElementById('name');
-var names1=name1.value;
+
 var list='';
 var submit= document.getElementById('submit-name');
 submit.onclick=function(){
-    names1=['ram','bala','balaji'];
+    
+     var request= new XMLHttpRequest();
+    console.log(request);
+    request.onreadystatechange=function(){
+    if(request.readyState==XMLHttpRequest.DONE){
+        console.log(request.readyState);
+        if(request.status==200){
+            names1=request.responseText;
+            names1=JSON.parse(names1);
     for(var i=0;i<names1.length;i++){
+        
         list +='<li>'+names1[i]+'</li>';
-    }
+    
+        }
     var ul=document.getElementById('nameslist');
-    ul.innerHTML=list;
+    ul.innerHTML=list;    
+    }
+    }
+    };
+    
 };
+
+
+var name1 = document.getElementById('name');
+var names1=name1.value;
+request.open('GET','http://rsdramanathan.imad.hasura-app.io/submit-name?name1='+names1,true);
+request.send();
