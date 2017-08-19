@@ -13,6 +13,18 @@ counter1.onclick=function(){
     }
     };
     request.open('GET','http://rsdramanathan.imad.hasura-app.io/counter',true);
-
     request.send()
+};
+
+var name1 = document.getElementById('name');
+var names=name.value;
+var list='';
+var submit= document.getElementById('submit-name');
+submit.onclick=function(){
+    var names1=['ram','bala','balaji'];
+    for(var i=0;i<names1.length;i++){
+        list='<li>'+names1[i]+'</li>';
+    }
+    var ul=document.getElementById('nameslist');
+    ul.innerHTML=list;
 };
