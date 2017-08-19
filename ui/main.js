@@ -45,5 +45,5 @@ submit.onclick=function(){
 
 var name1 = document.getElementById('name');
 var names1=name1.value;
-request.open('GET','http://rsdramanathan.imad.hasura-app.io/submit-name?name1='+names1,true);
+request.open('GET','http://rsdramanathan.imad.hasura-app.io/submit-name?name='+names1,true);
 request.send();
