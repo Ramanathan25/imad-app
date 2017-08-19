@@ -28,10 +28,10 @@ submit.onclick=function(){
         console.log(request.readyState);
         if(request.status==200){
            var names3=request.responseText;
-            names1=JSON.parse(names3);
-    for(var i=0;i<names1.length;i++){
+            names3=JSON.parse(names3);
+    for(var i=0;i<names3.length;i++){
         
-        list +='<li>'+names1[i]+'</li>';
+        list +='<li>'+names3[i]+'</li>';
     
         }
     var ul=document.getElementById('nameslist');
