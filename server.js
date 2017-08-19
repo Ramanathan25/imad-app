@@ -61,10 +61,10 @@ return createHTML;
 }
 var name1=[];
 app.get('/submit-name/:name',function(req,res){
-    name1=req.params.name;
+    name2=req.params.name;
     
-    req.push(name1);
-    res.send(JSON.Stringify(name1));
+    name1.push(name2);
+    res.send(JSON.stringify(name1));
 })
 
 app.get('/', function (req, res) {
