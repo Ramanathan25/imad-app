@@ -17,7 +17,7 @@ counter1.onclick=function(){
 };
 
 
-var list='';
+
 var submit= document.getElementById('submit-name');
 submit.onclick=function(){
     
@@ -29,6 +29,7 @@ submit.onclick=function(){
         if(request.status==200){
            var names3=request.responseText;
             names3=JSON.parse(names3);
+            var list='';
             console.log(names3);
     for(var i=0;i<names3.length;i++){
         
