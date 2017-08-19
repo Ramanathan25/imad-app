@@ -60,8 +60,8 @@ function innerHTMLtemplate(data){
 return createHTML;
 }
 var name1=[];
-app.get('/submit-name/:name',function(req,res){
-    name2=req.params.name;
+app.get('/submit-name',function(req,res){
+    name2=req.query.name;
     
     name1.push(name2);
     res.send(JSON.stringify(name1));
