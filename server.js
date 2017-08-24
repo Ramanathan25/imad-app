@@ -103,6 +103,7 @@ app.get('/counter',function (req,res){
 });
 app.get('/articles/:articlename',function(req,res){
     //select * from article where title='';delete from article where 'a'='a';
+    console.log('var');
    pool.query("SELECT * FROM article WHERE title=$1",[req.params.articlename], function(err,result)
    {
        console.log ("SELECT * FROM article WHERE title=$1",[req.params.articlename]);
