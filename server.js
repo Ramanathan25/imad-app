@@ -86,7 +86,7 @@ app.get('/submit-name',function(req,res){
     
     name1.push(name2);
     res.send(JSON.stringify(name1));
-})
+});
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
