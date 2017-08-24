@@ -78,7 +78,7 @@ app.get('/submit-name',function(req,res){
 });
 
 
-
+var pool=new pool(config);
 app.get('/test-db',function(req,res){
 
 });
