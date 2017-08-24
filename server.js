@@ -109,11 +109,15 @@ app.get('/articles/:articlename',function(req,res){
         res.status(500).send(err.toString());
         console.log(res.status);
         } 
+        else{
+            if(result.rows.length === 0){
+               res.status(404).send('Article Not found');
+            }
         else
         {
             var articledata=result.rows[0];
             res.send(innerHTMLtemplate(articledata));
-        }
+        }}
 });
 });
 
