@@ -117,9 +117,10 @@ app.get('/articles/:articlename',function(req,res){
             }
         else
         {
-            console.log ("SELECT * FROM article WHERE title=$1",[req.params.articlename]);
             var articledata=result.rows[0];
+            console.log (articledata);
             res.send(innerHTMLtemplate(articledata));
+            console.log(innerHTMLtemplate(articledata));
         }}
 });
 });
