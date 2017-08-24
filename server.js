@@ -79,7 +79,6 @@ app.get('/submit-name',function(req,res){
 
 
 
-var zero = new Pool(config);
 app.get('/test-db',function(req,res){
 
 });
