@@ -59,7 +59,7 @@ function innerHTMLtemplate(data){
             <h2> ${data.heading}</h2>
         </div>
         <div>
-            ${data.date}
+            ${data.date.toDateString()}
         </div>
         <div>
             ${data.paragraph}
