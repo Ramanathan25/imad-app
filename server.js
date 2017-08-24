@@ -68,10 +68,10 @@ app.get('/submit-name',function(req,res){
 });
 
 var config={
-    user: "rsdramanathan",
-    database: "rsdramanathan",
-    host: "db.imad.hasura-app.io",
-    port: "5432",
+    user: 'rsdramanathan',
+    database: 'rsdramanathan',
+    host: 'db.imad.hasura-app.io',
+    port: '5432',
     password: process.env.DB_PASSWORD
     
 };
