@@ -76,9 +76,9 @@ var config={
     
 };
 
-var pool=new Pool(config);
+var zero=new Pool(config);
 app.get('/test-db',function(req,res){
-    pool.query('select * from test', function(err,result){
+    zero.query('select * from test', function(err,result){
         if(err){
             res.status(500).send(err.toString());
         }
