@@ -67,6 +67,28 @@ app.get('/submit-name',function(req,res){
     res.send(JSON.stringify(name1));
 });
 
+var config={
+    user: "rsdramanathan",
+    database: "rsdramanathan",
+    host: "db.imad.hasura-app.io",
+    port: "5432",
+    password: process.env.DB_PASSWORD
+    
+};
+
+var Pool=new Pool(config);
+app.get('/test-db',function(req,res){
+    Pool.query('select * from test', function(err,result){
+        if(err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            res.send(JSON.stringify(result));
+        }
+    });
+});
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
