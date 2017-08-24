@@ -84,7 +84,7 @@ pool.query('SELECT * FROM test',function(err,result){
     if(err){
         console.log(err);
         res.status(500).send(err.toString());
-        console.log(err.toString());
+        console.log(res.status);
         } else
         {
             res.send(JSON.stringify(result));
