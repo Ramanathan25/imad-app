@@ -79,7 +79,7 @@ app.get('/submit-name',function(req,res){
 
 
 
-var zero=new Pool(config);
+var zero = new Pool(config);
 app.get('/test-db',function(req,res){
     zero.query('SELECT * FROM test', function(err,result){
         if(err){
