@@ -101,9 +101,20 @@ app.get('/counter',function (req,res){
    counter=counter+1;
    res.send(counter.toString());
 });
-app.get('/:articlename',function(req,res){
-    var articlename=req.params.articlename;
-    res.send(innerHTMLtemplate(column[articlename]));
+app.get('/articles/:articlename',function(req,res){
+   pool.query("SELECT * FROM article where title="+ reg.params.articleName, function(err,result)
+   {
+       if(err){
+        console.log(err);
+        res.status(500).send(err.toString());
+        console.log(res.status);
+        } 
+        else
+        {
+            var articledata=result.rows[0];
+            res.send(innerHTMLtemplate(articledata));
+        }
+});
 });
 
 app.get('/ui/main.js', function (req, res) {
