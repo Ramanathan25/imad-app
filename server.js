@@ -61,7 +61,7 @@ app.get('/hash/:pwd',function(req,res){
 });
 function hash(password,salt){
     var hash=crypto.pbkdf2Sync(password, salt, 1000, 512, 'sha512');
-    console.log(hash.toString());
+    console.log(hash);
     return hash.toString('hex');
 }
 
