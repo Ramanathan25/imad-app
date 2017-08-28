@@ -62,7 +62,7 @@ submt.onclick=function(){
         console.log(req.readyState);
         if(req.status==200){
               console.log('logged in successfully');
-              alert('credentials are correcct!!');
+              alert('credentials are correct!!');
             
         }else if(req.status==403){
             console.log('incorrect credentials');
