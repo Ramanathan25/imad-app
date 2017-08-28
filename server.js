@@ -85,7 +85,7 @@ pool.query('SELECT * FROM test',function(err,result){
 app.post('/create-user',function(req,res){
     var username=req.body.username;
     var pwd=req.body.password;
-    var salt='this is my new password';
+    var salt=crypto.randomBytes(128).toString('hex');
     var dbstring=hash(pwd,salt);
     pool.query('insert into "user"(username,password)values($1,$2)',[username,dbstring],function(err,result){
         if(err){
