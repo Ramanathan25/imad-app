@@ -77,7 +77,7 @@ submit.onclick=function(){
 
 
 var username = document.getElementById('username').value;
-var password=document.getElementById('password').value;
+var password = document.getElementById('password').value;
 console.log(username);
 console.log(password);
 request.open('POST', 'http://rsdramanathan.imad.hasura-app.io/1ogin', true);
