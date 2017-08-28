@@ -53,7 +53,7 @@ request.send();
 
 
 var submt= document.getElementById('submit-name');
-submt.onclick=function(){
+submit.onclick=function(){
     
      var request= new XMLHttpRequest();
     console.log(request);
