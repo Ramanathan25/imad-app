@@ -82,5 +82,5 @@ console.log(username);
 console.log(password);
 req.open('POST', 'http://rsdramanathan.imad.hasura-app.io/login', true);
 req.setRequestHeader('Content-type', 'application/json');
-req.send();
+req.send(JSON.stringify({username: username,password: password}));
 };
