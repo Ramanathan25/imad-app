@@ -3,6 +3,7 @@ var morgan = require('morgan');
 var path = require('path');
 var pool= require('pg').Pool;
 var crypto= require('crypto');
+var body=require('body-parser');
 
 
 var config={
@@ -15,7 +16,7 @@ var config={
 
 var app = express();
 app.use(morgan('combined'));
-
+app.use(bodyParser.json());
 
 
 
@@ -79,6 +80,22 @@ pool.query('SELECT * FROM test',function(err,result){
             console.log(res.status);
         }
 });
+});
+
+app.post('/create-user',function(req,res){
+    var username=req.body.username;
+    var pwd=req.body.password;
+    var salt='this is my new password';
+    var dbstring=hash(pwd,salt);
+    pool.query("insert into 'user'(username,password)values($1,$2)",[username,dbstring],function(err,result){
+        if(err){
+            res.status(500).send(err.toString());
+             }
+        else {
+            res.send("User successfully created");
+        }
+        
+    });
 });
 
 app.get('/', function (req, res) {
