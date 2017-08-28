@@ -53,22 +53,22 @@ request.send();
 
 
 var submt= document.getElementById('submit-name');
-submit.onclick=function(){
+submt.onclick=function(){
     
-     var request= new XMLHttpRequest();
-    console.log(request);
-    request.onreadystatechange=function(){
-    if(request.readyState==XMLHttpRequest.DONE){
-        console.log(request.readyState);
-        if(request.status==200){
+     var req= new XMLHttpRequest();
+    console.log(req);
+    req.onreadystatechange=function(){
+    if(req.readyState==XMLHttpRequest.DONE){
+        console.log(req.readyState);
+        if(req.status==200){
               console.log('logged in successfully');
               alert('credentials are correcct!!');
             
-        }else if(request.status==403){
+        }else if(req.status==403){
             console.log('incorrect credentials');
             alert('invalid credentials, please type correct username/password');
             
-        }else if(request.status==500){
+        }else if(req.status==500){
             console.log('incorrect site');
         }
     }
@@ -80,7 +80,7 @@ var username = document.getElementById('username').value;
 var password = document.getElementById('password').value;
 console.log(username);
 console.log(password);
-request.open('POST', 'http://rsdramanathan.imad.hasura-app.io/1ogin', true);
-request.setRequestHeader('Content-type', 'application/json');
-request.send();
+req.open('POST', 'http://rsdramanathan.imad.hasura-app.io/1ogin', true);
+req.setRequestHeader('Content-type', 'application/json');
+req.send();
 };
