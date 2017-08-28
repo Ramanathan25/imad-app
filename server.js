@@ -16,7 +16,7 @@ var config={
 
 var app = express();
 app.use(morgan('combined'));
-app.use(bodyParser.json());
+app.use(body.json());
 
 
 
@@ -87,12 +87,12 @@ app.post('/create-user',function(req,res){
     var pwd=req.body.password;
     var salt='this is my new password';
     var dbstring=hash(pwd,salt);
-    pool.query("insert into 'user'(username,password)values($1,$2)",[username,dbstring],function(err,result){
+    pool.query('insert into "user"(username,password)values($1,$2)',[username,dbstring],function(err,result){
         if(err){
             res.status(500).send(err.toString());
              }
         else {
-            res.send("User successfully created");
+            res.send("User successfully created" + username);
         }
         
     });
