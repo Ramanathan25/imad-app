@@ -49,3 +49,38 @@ var names1=name1.value;
 request.open('GET','http://rsdramanathan.imad.hasura-app.io/submit-name?name='+names1,true);
 request.send();
 };
+
+
+
+var submt= document.getElementById('submit-name');
+submt.onclick=function(){
+    
+     var request= new XMLHttpRequest();
+    console.log(request);
+    request.onreadystatechange=function(){
+    if(request.readyState==XMLHttpRequest.DONE){
+        console.log(request.readyState);
+        if(request.status==200){
+              console.log('logged in successfully');
+              alert('credentials are correcct!!');
+            
+        }else if(request.status==403){
+            console.log('incorrect credentials');
+            alert('invalid credentials, please type correct username/password');
+            
+        }else if(request.status==500){
+            console.log('incorrect site');
+        }
+    }
+    };
+    
+
+
+var username = document.getElementById('username').value;
+var password=document.getElementById('password').value;
+console.log(username);
+console.log(password);
+request.open('POST','http://rsdramanathan.imad.hasura-app.io/1ogin',true);
+request.setRequestHeader('content-type','application/json');
+request.send(JSON.stringify({username:username,password:password}));
+};
