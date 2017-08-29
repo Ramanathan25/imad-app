@@ -53,7 +53,7 @@ function innerHTMLtemplate(data){
         <div>
         Comment:
         </div>
-        <textarea rows='10' cols='100' name='Comment'></textarea>
+        <textarea rows='3' cols='50' name='Comment'></textarea>
     </div>
     
  </body>
