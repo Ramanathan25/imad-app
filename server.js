@@ -50,6 +50,10 @@ function innerHTMLtemplate(data){
         <div>
             ${data.paragraph}
         </div>
+        <div>
+        Comment:
+        <textarea rows='10' cols='100' name='Comment'/>
+        </div>
     </div>
  </body>
 </html>`;
