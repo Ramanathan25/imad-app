@@ -146,6 +146,11 @@ app.get('/check-login',function(req,res){
        res.send('you are not logged in');
    }
 });
+
+app.get('/logout',function(req,res){
+    delete req.session.auth;
+    res.send('Logged out successfully');
+});
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
