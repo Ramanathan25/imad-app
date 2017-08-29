@@ -4,6 +4,7 @@ var path = require('path');
 var pool= require('pg').Pool;
 var crypto= require('crypto');
 var body=require('body-parser');
+var session = require('express-session');
 
 
 var config={
@@ -17,6 +18,11 @@ var config={
 var app = express();
 app.use(morgan('combined'));
 app.use(body.json());
+app.use({
+    secret : 'someRandomValue',
+    cookie : {maxAge: 1000*60*60*24*30}
+    
+});
 
 
 
@@ -114,8 +120,13 @@ app.post('/login',function(req,res){
     else{
         var dbstring=result.rows[0].password;
         var salt = dbstring.split('$')[2];
-        var hashstring=hash(pwd,salt);
+        var hashstring=hash(pwd,salt);//creating a hash value on the password and salt submitted.
         if(hashstring==dbstring){
+            req.session.auth={userId: result.rows[0].id};//set the session
+            
+            //session middleware setting a cookie with session id 
+            //server side, it maps the session id to an object(auth)
+            //auth maps to userid which contains our id value stored in dB.
             res.send("user logged in successfully: "+ username);
             
         }
@@ -127,6 +138,14 @@ app.post('/login',function(req,res){
 });
 });
 
+app.get('/check-login',function(req,res){
+   if(req.session && req.session.auth && req.session.auth.userId){
+       res.send('You are logged in successfully :' + req.session.auth.userId.toString());
+   } 
+   else{
+       res.send('you are not logged in');
+   }
+});
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
