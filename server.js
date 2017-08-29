@@ -18,11 +18,11 @@ var config={
 var app = express();
 app.use(morgan('combined'));
 app.use(body.json());
-app.use({
+app.use(session({
     secret : 'someRandomValue',
     cookie : {maxAge: 1000*60*60*24*30}
     
-});
+}));
 
 
 
